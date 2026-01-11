@@ -1,6 +1,6 @@
-<h1>Selamat Datang di Ecommerce</h1>
+<h1>Selamat Datang di UAS E-COMMERCE</h1>
 <p>
-    Ini adalah paragraf
+   TUGAS AKHIR UNTUK MENYELESAIKAN MATAKULIAH E-COMMERCE
 </p>
 
 <p>

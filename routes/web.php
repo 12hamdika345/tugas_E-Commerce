@@ -33,6 +33,20 @@ Route::get('/kontak', [HomepageController::class, 'kontak']);
 
 Route::get('/kategori', [HomepageController::class, 'kategori']);
 
+Route::get('/kategori/{slug}', [HomepageController::class, 'kategoribyslug']);
+
+Route::get('/produk', [HomepageController::class, 'produk']);
+
+Route::get('/produk/{id}', [HomepageController::class, 'produkdetail']);
+
+Route::group(['middleware' => ['auth']], function() {
+  Route::resource('cart', \App\Http\Controllers\CartController::class);
+  Route::patch('kosongkan/{id}', [\App\Http\Controllers\CartController::class, 'kosongkan']);
+  Route::resource('cartdetail', \App\Http\Controllers\CartDetailController::class);
+  Route::resource('/alamatpengiriman', \App\Http\Controllers\AlamatPengirimanController::class);
+    Route::get('checkout', [\App\Http\Controllers\CartController::class, 'checkout']);
+});
+
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/', [DashboardController::class, 'index'])->name('admin');
 
@@ -67,8 +81,17 @@ Route::group(['prefix' => 'admin'], function() {
       Route::post('image', [ImageController::class, 'store'])->name('image.store');
       // hapus image by id
       Route::delete('image/{id}', [ImageController::class, 'destroy'])->name('image.destroy');
+
+      Route::resource('slideshow', \App\Http\Controllers\SlideshowController::class);
+
+      // produk promo
+    Route::resource('promo', \App\Http\Controllers\ProdukPromoController::class);
+
+    // load async produk
+    Route::get('loadprodukasync', [ProdukController::class, 'loadprodukasync']);
       
 });
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

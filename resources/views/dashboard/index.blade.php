@@ -84,24 +84,24 @@
               <tr>
                 <td>1</td>
                 <td>PRO-1</td>
-                <td>Baju Polo</td>
-                <td>Baju Dewasa</td>
+                <td>Kripik jagung</td>
+                <td>makanan</td>
                 <td>12 kodi</td>
                 <td>5.000</td>
               </tr>
               <tr>
                 <td>2</td>
                 <td>PRO-2</td>
-                <td>Running Shirt</td>
-                <td>Baju Olahraga</td>
+                <td>Kripik Pedas</td>
+                <td>makanan</td>
                 <td>20 kodi</td>
                 <td>25.000</td>
               </tr>
               <tr>
                 <td>3</td>
                 <td>PRO-3</td>
-                <td>Kaos Kaki</td>
-                <td>Perlengkapan</td>
+                <td>Kripik Keju</td>
+                <td>makanan</td>
                 <td>20 kodi</td>
                 <td>125.000</td>
               </tr>
