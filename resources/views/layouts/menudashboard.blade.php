@@ -20,13 +20,13 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{url('admin/produk')}}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Produk</p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{url('admin/kategori')}}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Kategori</p>
           </a>
@@ -49,7 +49,7 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{url('admin/transaksi')}}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Data Transaksi</p>
           </a>
@@ -66,7 +66,7 @@
       </a>
       <ul class="nav nav-treeview">
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="{{url('admin/customer')}}" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Customer</p>
           </a>
@@ -123,8 +123,9 @@
     </li>
   </ul>
 </nav>
-<form id="logout-form" action="#" method="POST" style="display: none;">
+<form id="logout-form" method="POST" action="{{ route('logout') }}" style="display: none;">
   @csrf
+  <button type="submit">Logout</button>
 </form>
 </ul>
 </nav>

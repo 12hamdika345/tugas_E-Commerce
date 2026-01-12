@@ -51,7 +51,7 @@ class ProdukPromoController extends Controller
         }else{
             $itemuser = $request->user();
             $inputan = $request->all();
-            $inputan['user_id'] = $itemuser->id;
+            $inputan['user_id'] = 1;
             $itempromo = ProdukPromo::create($inputan);
             return redirect()->route('promo.index')->with('success', 'Data produk promo berhasil ditambahkan');
         }

@@ -9,20 +9,20 @@
                 <div class="card-body">
                     @if(count($errors) > 0)
                     @foreach($errors->all() as $error)
-                        <div class="alert alert-warning">{{ $error }}</div>
+                    <div class="alert alert-warning">{{ $error }}</div>
                     @endforeach
                     @endif
                     @if ($message = Session::get('error'))
-                        <div class="alert alert-warning">
-                            <p>{{ $message }}</p>
-                        </div>
+                    <div class="alert alert-warning">
+                        <p>{{ $message }}</p>
+                    </div>
                     @endif
                     @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
+                    <div class="alert alert-success">
+                        <p>{{ $message }}</p>
+                    </div>
                     @endif
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ url('postLogin') }}">
                         @csrf
                         <div class="form-group">
                             <label for="email">Email</label>
