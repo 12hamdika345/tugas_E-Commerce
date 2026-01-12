@@ -111,7 +111,8 @@ class ProdukPromoController extends Controller
      */
     public function destroy(ProdukPromo $produkPromo)
     {
-        $itempromo = ProdukPromo::findOrFail($produkPromo->id);
+        $itempromo = ProdukPromo::findOrFail($produkPromo);
+        dd($itempromo);
         if ($itempromo->delete()) {
             return back()->with('success', 'Data produk promo berhasil dihapus');
         } else {

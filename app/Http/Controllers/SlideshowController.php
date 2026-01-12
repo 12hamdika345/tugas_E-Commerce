@@ -80,7 +80,7 @@ class SlideshowController extends Controller
      */
     public function destroy($id)
     {
-        $itemSlideshow = Slideshow::findOrFail($slideshow->id);
+        $itemSlideshow = Slideshow::findOrFail($id);
         // cek kalo foto bukan null
         if ($itemSlideshow->foto != null) {
             \Storage::delete($itemSlideshow->foto);

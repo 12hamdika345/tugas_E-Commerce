@@ -53,7 +53,7 @@ class KategoriController extends Controller
         ]);
         $itemuser = $request->user();
         $inputan = $request->all();
-        $inputan['user_id'] = 1;
+        $inputan['user_id'] = session('user_id');
         $inputan['slug_kategori'] = \Str::slug($request->slug_kategori);
         $inputan['status'] = 'publish';
         $itemkategori = Kategori::create($inputan);
