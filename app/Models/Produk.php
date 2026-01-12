@@ -22,7 +22,7 @@ class Produk extends Model
     ];
 
     public function kategori() {
-        return $this->belongsTo('App\Kategori', 'kategori_id');
+        return $this->belongsTo(Kategori::class, 'kategori_id', 'id');
     }
 
     public function user() {
