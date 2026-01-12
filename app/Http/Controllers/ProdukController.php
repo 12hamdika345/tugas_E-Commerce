@@ -58,7 +58,7 @@ class ProdukController extends Controller
         $slug = \Str::slug($request->slug_produk);//buat slug dari input slug produk
         $inputan = $request->all();
         $inputan['slug_produk'] = $slug;
-        $inputan['user_id'] = 1;
+        $inputan['user_id'] = session('user_id');
         $inputan['status'] = 'publish';
         $itemproduk = Produk::create($inputan);
         return redirect()->route('produk.index')->with('success', 'Data berhasil disimpan');
@@ -153,9 +153,10 @@ class ProdukController extends Controller
             'produk_id' => 'required',
         ]);
         $itemuser = $request->user();
-        $itemproduk = Produk::where('user_id', $itemuser->id)
+        $itemproduk = Produk::where('user_id', session('user_id'))
                                 ->where('id', $request->produk_id)
                                 ->first();
+
         if ($itemproduk) {
             $fileupload = $request->file('image');
             $folder = 'assets/images';

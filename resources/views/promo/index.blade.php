@@ -29,14 +29,14 @@
         </div>
         <div class="card-body">
           @if ($message = Session::get('error'))
-              <div class="alert alert-warning">
-                  <p>{{ $message }}</p>
-              </div>
+          <div class="alert alert-warning">
+            <p>{{ $message }}</p>
+          </div>
           @endif
           @if ($message = Session::get('success'))
-              <div class="alert alert-success">
-                  <p>{{ $message }}</p>
-              </div>
+          <div class="alert alert-success">
+            <p>{{ $message }}</p>
+          </div>
           @endif
           <div class="table-responsive">
             <table class="table table-bordered">
@@ -45,7 +45,7 @@
                   <th width="50px">No</th>
                   <th>Gambar</th>
                   <th>Kode</th>
-                  
+
                   <th>Nama</th>
                   <th>Harga Awal</th>
                   <th>Diskon</th>
@@ -57,7 +57,7 @@
                 @foreach($itempromo as $promo)
                 <tr>
                   <td>
-                  {{ ++$no }}
+                    {{ ++$no }}
                   </td>
                   <td>
                     @if($promo->produk->foto != null)
@@ -65,30 +65,30 @@
                     @endif
                   </td>
                   <td>
-                  {{ $promo->produk->kode_produk }}
+                    {{ $promo->produk->kode_produk }}
                   </td>
                   <td>
-                  {{ $promo->produk->nama_produk }}
+                    {{ $promo->produk->nama_produk }}
                   </td>
                   <td>
-                  {{ number_format($promo->harga_awal, 2) }}
+                    {{ number_format($promo->harga_awal, 2) }}
                   </td>
                   <td>
-                  {{ number_format($promo->diskon_nominal, 2) }} ({{ $promo->diskon_persen }}%)
+                    {{ number_format($promo->diskon_nominal, 2) }} ({{ $promo->diskon_persen }}%)
                   </td>
                   <td>
-                  {{ number_format($promo->harga_akhir, 2) }}
+                    {{ number_format($promo->harga_akhir, 2) }}
                   </td>
                   <td>
                     <a href="{{ route('promo.edit', $promo->id) }}" class="btn btn-sm btn-primary mr-2 mb-2">
                       Edit
                     </a>
-                    <form action="{{ route('promo.destroy', $promo->id) }}" method="post" style="display:inline;">
+                    <form action="{{ url('admin/promo', $promo->id) }}" method="post" style="display:inline;">
                       @csrf
                       {{ method_field('delete') }}
                       <button type="submit" class="btn btn-sm btn-danger mb-2">
                         Hapus
-                      </button>                    
+                      </button>
                     </form>
                   </td>
                 </tr>

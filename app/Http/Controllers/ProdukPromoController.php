@@ -109,10 +109,9 @@ class ProdukPromoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ProdukPromo $produkPromo)
+    public function destroy($produkPromo)
     {
         $itempromo = ProdukPromo::findOrFail($produkPromo);
-        dd($itempromo);
         if ($itempromo->delete()) {
             return back()->with('success', 'Data produk promo berhasil dihapus');
         } else {
